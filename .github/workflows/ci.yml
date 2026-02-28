@@ -1,0 +1,34 @@
+name: C++ CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y cmake ninja-build gcc g++ python3-pip
+        pip install conan
+
+    - name: Conan profile detect
+      run: conan profile detect --force
+
+    - name: Install dependencies with Conan
+      run: conan install . --output-folder=build --build=missing
+
+    - name: Configure CMake
+      run: cmake --preset conan-release
+
+    - name: Build
+      run: cmake --build --preset conan-release
+
+    - name: Run tests
+      run: ctest --preset conan-release --output-on-failure

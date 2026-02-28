@@ -1,0 +1,5 @@
+if(EXISTS "/home/alissoneves/cpp-lab/build/build/Release/cpp_lab_tests[1]_tests.cmake")
+  include("/home/alissoneves/cpp-lab/build/build/Release/cpp_lab_tests[1]_tests.cmake")
+else()
+  add_test(cpp_lab_tests_NOT_BUILT cpp_lab_tests_NOT_BUILT)
+endif()
