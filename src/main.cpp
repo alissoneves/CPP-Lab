@@ -1,7 +1,7 @@
 #include <fmt/core.h>
 
 int main() {
-	    fmt::print("Hellooooooooouuuuuuu {}!\n", "DevOps C++");
+	    fmt::print("Helloooooooou {}!\n", "DevOps C++");
 	        return 0;
 }
 
