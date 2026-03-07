@@ -1,2 +1,8 @@
 build/
 CMakeUserPresets.json
+build/
+*.o
+*.out
+*.a
+*.exe
+main
