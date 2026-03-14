@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                 curl -u $NEXUS_USER:$NEXUS_PASS \
-                --upload-file build/app \
+                --upload-file build/cpp-lab \
                 $NEXUS_URL/app-build$BUILD_NUMBER
                 '''
             }
