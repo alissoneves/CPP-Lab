@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'cpp-agent' }
     stages {
         stage('Clone') {
             steps {
