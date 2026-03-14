@@ -1,6 +1,6 @@
 #include <fmt/core.h>
 
 int main() {
-		    fmt::print("Hello {}!\n", "DevOps C++ Course");
+		    fmt::print("Helloooou {}!\n", "DevOps C++ Course");
 		    	        return 0;
 }
