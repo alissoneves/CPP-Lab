@@ -36,8 +36,9 @@ pipeline {
         stage('Upload Artifact') {
             steps {
                 sh '''
+                FILE=$(find build -type f -executable | head -n 1)
                 curl -u $NEXUS_USER:$NEXUS_PASS \
-                --upload-file build/cpp-lab \
+                --upload-file $FILE \
                 $NEXUS_URL/app-build$BUILD_NUMBER
                 '''
             }
