@@ -1,3 +1,6 @@
+build
 build/
-.git/
-*.user
+CMakeCache.txt
+CMakeFiles
+.git
+.gitignore
