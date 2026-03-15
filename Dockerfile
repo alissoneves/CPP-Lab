@@ -10,7 +10,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN mkdir build && \
+RUN mkdir -p build && \
     cd build && \
     cmake .. && \
     make
