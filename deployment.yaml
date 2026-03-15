@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpp-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpp-lab
+  template:
+    metadata:
+      labels:
+        app: cpp-lab
+    spec:
+      containers:
+      - name: cpp-lab
+        image: localhost:5001/cpp-lab:1.0
+        imagePullPolicy: Always
