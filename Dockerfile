@@ -1,12 +1,18 @@
 FROM ubuntu:22.04
 
+RUN apt-get update && \
+    apt-get install -y \
+    build-essential \
+    cmake \
+    libfmt-dev
+
 WORKDIR /app
 
-RUN apt-get update && \
-    apt-get install -y libfmt-dev
+COPY . .
 
-COPY build/cpp_lab /app/cpp_lab
+RUN mkdir build && \
+    cd build && \
+    cmake .. && \
+    make
 
-RUN chmod +x /app/cpp_lab
-
-CMD ["sh", "-c", "./cpp_lab && sleep infinity"]
+CMD ["./build/cpp_lab"]
