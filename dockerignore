@@ -1,6 +1,11 @@
-build
 build/
+build
 CMakeCache.txt
+CMakeFiles/
 CMakeFiles
+*.o
+*.a
+*.so
+*.out
 .git
 .gitignore
